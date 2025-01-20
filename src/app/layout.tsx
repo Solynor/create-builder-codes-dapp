@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { ContextProvider } from "@/components/ContextProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -17,17 +21,20 @@ export const metadata: Metadata = {
   description: "Hyperliquid Spot Boilerplate",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersObj = await headers();
+  const cookies = headersObj.get("cookie");
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
-        {children}
+        <ContextProvider cookies={cookies}>{children}</ContextProvider>
       </body>
     </html>
   );
