@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import UserProvider from "@/components/UserProvider";
 import { ContextProvider } from "@/components/ContextProvider";
 
 const geistSans = Geist({
@@ -34,7 +35,9 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
-        <ContextProvider cookies={cookies}>{children}</ContextProvider>
+        <ContextProvider cookies={cookies}>
+          <UserProvider>{children}</UserProvider>
+        </ContextProvider>
       </body>
     </html>
   );
