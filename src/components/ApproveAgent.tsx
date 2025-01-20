@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,14 +15,14 @@ import { approveAgent } from "@/lib/services/approve-agent";
 import { useAccount } from "wagmi";
 import useUserStore from "@/lib/store";
 
-const agent = generateAgentAccount();
-
 export default function ApproveAgent() {
   const { chain } = useAccount();
   const updateAgent = useUserStore((state) => state.updateAgent);
 
   const { mutate: approveAgentMutation, isPending } = useMutation({
     mutationFn: async () => {
+      const agent = generateAgentAccount();
+
       if (!agent.address || !agent.privateKey || !chain) {
         throw new Error("Missing address or chain");
       }
@@ -33,15 +35,12 @@ export default function ApproveAgent() {
         throw new Error("Failed to sign builder fee");
       }
 
+      updateAgent({
+        address: agent.address,
+        privateKey: agent.privateKey,
+      });
+
       return result;
-    },
-    onSuccess: (result) => {
-      if (result) {
-        updateAgent({
-          address: agent.address,
-          privateKey: agent.privateKey,
-        });
-      }
     },
     onError: (error) => {
       console.error("signBuilderFee error", error);
@@ -58,29 +57,6 @@ export default function ApproveAgent() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Separator className="mb-4" />
-
-        <div className="mb-4 space-y-4">
-          <div className="space-y-2">
-            <p className="text-sm font-medium leading-none truncate">
-              Agent Address
-            </p>
-            <p className="text-sm text-muted-foreground truncate">
-              {agent.address}
-            </p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-sm font-medium leading-none">
-              Agent Private Key
-            </p>
-            <p className="text-sm text-muted-foreground truncate">
-              {agent.privateKey}
-            </p>
-          </div>
-        </div>
-
-        <Separator className="my-4" />
-
         <Button
           className="mt-4"
           onClick={() => approveAgentMutation()}

@@ -5,6 +5,7 @@ import "./globals.css";
 
 import UserProvider from "@/components/UserProvider";
 import { ContextProvider } from "@/components/ContextProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,15 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
       >
         <ContextProvider cookies={cookies}>
-          <UserProvider>{children}</UserProvider>
+          <UserProvider>
+            <header className="flex justify-end p-6">
+              {/* @ts-ignore */}
+              <appkit-button />
+            </header>
+            {children}
+          </UserProvider>
         </ContextProvider>
+        <Toaster />
       </body>
     </html>
   );

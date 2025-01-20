@@ -16,7 +16,7 @@ export default function UserProvider({
 
   useEffect(() => {
     if (address) {
-      const user = localStorage.getItem(`sovruntrade.user_${address}`);
+      const user = localStorage.getItem(`test_spot_trader.user_${address}`);
       const userData = user ? JSON.parse(user) : null;
 
       login({

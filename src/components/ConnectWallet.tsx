@@ -1,8 +1,3 @@
-"use client";
-
-import { useAppKit } from "@reown/appkit/react";
-
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -12,8 +7,6 @@ import {
 } from "@/components/ui/card";
 
 export default function ConnectWallet() {
-  const { open } = useAppKit();
-
   return (
     <Card>
       <CardHeader>
@@ -23,7 +16,8 @@ export default function ConnectWallet() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Button onClick={() => open()}>Connect Wallet</Button>
+        {/* @ts-ignore */}
+        <appkit-button />
       </CardContent>
     </Card>
   );
