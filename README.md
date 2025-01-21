@@ -79,15 +79,15 @@ The trading interface supports both buying and selling with features like:
 
 ### Builder Fee Approval
 
-Users need to approve builder fees before trading
+Users need to approve builder fees before trading.
 
 ### Agent System
 
-The platform uses an agent-based system for gas-free trading
+The platform uses an agent-based system for gas-free trading.
 
 ## Contributing
 
-Contributions are welcome! Guidelines under edit, please feel free to coordinate with us as we review for PRs.
+Contributions are welcome! Guidelines currently being drafted, please feel free to coordinate with us for reviewing PRs.
 
 ## License
 
