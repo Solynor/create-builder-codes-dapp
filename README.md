@@ -103,4 +103,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For support, please open an issue in the GitHub repository or reach out to the Hyperliquid community.
+For support, please open an issue in the GitHub repository, reach out to the Hyperliquid community, or visit the Sovrun discord.
