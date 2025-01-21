@@ -64,12 +64,7 @@ pnpm dev
 
 ### Wallet Connection
 
-The wallet connection is handled through AppKit integration, providing a seamless connection experience:
-
-```typescript:src/components/ConnectWallet.tsx
-startLine: 9
-endLine: 24
-```
+The wallet connection is handled through AppKit integration, providing a seamless connection experience
 
 ### Trading Interface
 
@@ -82,24 +77,15 @@ The trading interface supports both buying and selling with features like:
 
 ### Builder Fee Approval
 
-Users need to approve builder fees before trading:
-
-```typescript:src/components/ApproveBuilderFee.tsx
-startLine: 17
-endLine: 61
-```
+Users need to approve builder fees before trading
 
 ### Agent System
 
-The platform uses an agent-based system for gas-free trading:
-
-- Section Under Construction
+The platform uses an agent-based system for gas-free trading
 
 ## Contributing
 
 Contributions are welcome! Guidelines under edit, please feel free to coordinate with us as we review for PRs.
-
-- Section Under Construction
 
 ## License
 
