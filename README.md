@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hyperliquid Spot Trading Boilerplate
+
+A Next.js-based boilerplate for building decentralized spot trading applications on Hyperliquid. This project provides a foundation for creating web3 trading interfaces with essential features like wallet connection, builder fee approval, agent creation, and gas-free order execution.
+
+## Features
+
+- 🔐 Secure wallet connection using AppKit
+- 💱 Spot trading interface for buying and selling tokens
+- 🤝 Builder fee approval system
+- 🔑 Agent-based trading system
+- 🎨 Modern UI using shadcn/ui components
+- 🌙 Dark mode support
+- 🔄 Real-time price and balance updates
+
+## Tech Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Web3**:
+  - Wagmi
+  - Viem
+  - Ethers.js
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query
+- **UI Components**: shadcn/ui
+- **Package Manager**: pnpm
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Set up environment variables:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+NEXT_PUBLIC_NODE_ENV=development
+NEXT_PUBLIC_RPC_URL=your_rpc_url
+NEXT_PUBLIC_BUILDER_ADDRESS=your_builder_address
+NEXT_PUBLIC_BUILDER_FEE=your_builder_fee
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Run the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Core Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Wallet Connection
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The wallet connection is handled through AppKit integration, providing a seamless connection experience:
 
-## Deploy on Vercel
+```typescript:src/components/ConnectWallet.tsx
+startLine: 9
+endLine: 24
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Trading Interface
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The trading interface supports both buying and selling with features like:
+
+- Current token price
+- Balance checking
+- Slippage control
+- Order execution
+
+### Builder Fee Approval
+
+Users need to approve builder fees before trading:
+
+```typescript:src/components/ApproveBuilderFee.tsx
+startLine: 17
+endLine: 61
+```
+
+### Agent System
+
+The platform uses an agent-based system for gas-free trading:
+
+## Contributing
+
+Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or reach out to the Hyperliquid community.
