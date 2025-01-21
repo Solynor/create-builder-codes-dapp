@@ -1,6 +1,6 @@
-# Hyperliquid Spot Trading Boilerplate
+# Sovrun create-builder-codes-dapp Boilerplate
 
-A Next.js-based boilerplate for building decentralized spot trading applications on Hyperliquid. This project provides a foundation for creating web3 trading interfaces with essential features like wallet connection, builder fee approval, agent creation, and gas-free order execution.
+A Next.js-based boilerplate for building decentralized spot trading applications on Hyperliquid utilizing [Builder Codes](https://hyperliquid.gitbook.io/hyperliquid-docs/trading/builder-codes). This project provides a foundation for creating web3 trading interfaces with essential features like wallet connection, builder fee approval, agent creation, and gas-free order execution.
 
 ## Features
 
@@ -103,4 +103,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For support, please open an issue in the GitHub repository or reach out to the Hyperliquid community.
+For support, please open an issue in the GitHub repository, reach out to the Hyperliquid community, or visit the Sovrun discord.
