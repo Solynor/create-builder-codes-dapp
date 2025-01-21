@@ -93,9 +93,13 @@ endLine: 61
 
 The platform uses an agent-based system for gas-free trading:
 
+- Section Under Construction
+
 ## Contributing
 
-Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
+Contributions are welcome! Guidelines under edit, please feel free to coordinate with us as we review for PRs.
+
+- Section Under Construction
 
 ## License
 
