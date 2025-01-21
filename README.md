@@ -38,10 +38,20 @@ pnpm install
 3. Set up environment variables:
 
 ```env
+# The environment mode (development/production)
 NEXT_PUBLIC_NODE_ENV=development
+
+# The RPC URL for connecting to the Hyperliquid testnet
 NEXT_PUBLIC_RPC_URL=your_rpc_url
+
+# The builder's wallet address for fee collection
 NEXT_PUBLIC_BUILDER_ADDRESS=your_builder_address
-NEXT_PUBLIC_BUILDER_FEE=your_builder_fee
+
+# The builder fee percentage (in basis points)
+NEXT_PUBLIC_BUILDER_FEE=10
+
+# The WalletConnect project ID for wallet connections
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_wallet_connect_project_id
 ```
 
 4. Run the development server:
